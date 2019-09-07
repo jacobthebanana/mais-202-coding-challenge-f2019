@@ -80,4 +80,5 @@ if not os.path.exists("output"):
 
 plt.draw()
 plt.savefig("output/output.png")
-
+print("Success! A PNG of the bar chart can be found at", end=" ")
+print(os.getcwd() + "/output/output.png.")
