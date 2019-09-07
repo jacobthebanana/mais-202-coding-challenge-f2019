@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-members = dict() # Dictionary with member_id as the keys and home_ownership as data.
-statistics = dict() # Dictionary with home_ownership as keys and lists [Sum, Number_of_members] as items.
-results = dict() # Dictionary with home_ownership as keys and averages as items.
+members = dict()  # Dictionary with member_id as the keys and home_ownership as data.
+statistics = dict()  # Dictionary with home_ownership as keys and lists [Sum, Number_of_members] as items.
+results = dict()  # Dictionary with home_ownership as keys and averages as items.
 
 with open("home_ownership_data.csv", newline="") as member_csv:
     first_loop = True
@@ -76,5 +76,5 @@ if not os.path.exists("output"):
     os.mkdir("output")
 
 plt.draw()
-plt.savefig("output.png")
+plt.savefig("output/output.png")
 
