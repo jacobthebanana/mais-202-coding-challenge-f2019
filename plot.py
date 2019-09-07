@@ -1,5 +1,6 @@
 import csv
-import plotly.graph_objects as go
+import matplotlib.pyplot as plt
+import numpy as np
 import os
 
 members = dict() # Dictionary with member_id as the keys and home_ownership as data.
@@ -52,8 +53,8 @@ with open("loan_data.csv", newline="") as loan_csv:
 
         statistics[home_ownership] = [sum, number_of_members]
 
-x = list()
-y = list()
+ticks = list()
+heights = list()
 
 for home_ownership_type in statistics.keys():
     if statistics[home_ownership_type] != 0:
@@ -61,14 +62,19 @@ for home_ownership_type in statistics.keys():
         average = sum/number_of_members
         results[home_ownership_type] = average
 
-        x.append(home_ownership_type)
-        y.append(average)
-print()
+        ticks.append(home_ownership_type)
+        heights.append(average)
 
-plot = go.Figure(data=go.Histogram(histfunc="sum", x=x, y=y))
+
+plt.bar(np.arange(len(ticks)), height=heights, tick_label=ticks)
+
+plt.title("Average Loan amounts per Home Ownership")
+plt.ylabel("Average loan amount ($)")
+plt.xlabel("Home Ownership")
 
 if not os.path.exists("output"):
     os.mkdir("output")
 
-plot.write_image("output/output.svg")
-plot.write_image("output/output.png")
+plt.draw()
+plt.savefig("output.png")
+
