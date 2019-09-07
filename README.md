@@ -20,7 +20,7 @@ Make sure that the current user has write permission to the current directory. S
 python3 plot.py
 ```
 
-The script will create a subfolder `output`. The bar chart will be saved as a PNG file named  `output.png` in that folder.
+Statistics data will be written to the terminal. The script will create a subfolder `output` if it does not exist. The bar chart will be saved as a PNG file named  `output.png` in that folder.
 
 ---
 
