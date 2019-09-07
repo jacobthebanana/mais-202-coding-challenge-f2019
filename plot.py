@@ -65,6 +65,9 @@ for home_ownership_type in statistics.keys():
         ticks.append(home_ownership_type)
         heights.append(average)
 
+        print(home_ownership_type, end=": ")
+        print(average)
+
 
 plt.bar(np.arange(len(ticks)), height=heights, tick_label=ticks)
 
