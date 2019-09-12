@@ -1,4 +1,4 @@
-# Jacob's response to the 2019 MAIS 202 Coding Challenge
+# Jacob's response to the 2019 MAIS 202 Coding Challenge :)
 ## Dependencies
 - Python 3.5 or higher.
 - Mathplotlib 3.0 or higher.
